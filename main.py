@@ -21,4 +21,5 @@
 # A neural network is a layered model made of interconnected neurons that learn complex patterns in data through weighted mathematical operations.
 import os
 print(os.getcwd())
-print(os.mkdir('hello'))
+
+os.rmdir('hello')

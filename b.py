@@ -36,4 +36,42 @@ def  print_pattern(n):
         print('*' * i)
 print_pattern(4)
 
+#dict and tuples
+
+data = {'China':143,'India':136,'USA':32,'Pakistan':21}
+random = [k.lower() for k in data.keys()]   #here we are making the keys of the data dict into lowercase
+a=input('Enter something:')
+if a.lower() =='print':
+    for num in data:
+       print(num+'==>'+str(data[num]))
+elif a.lower() == 'add':
+    question = input('Enter the name of country')
+    if question.lower() in random:
+        print(f'{question} already exists')
+    else:
+        question2=int(input('Enter the population'))
+        data[question] = question2
+        print(f'{data[question]} : {question2}')
+
+elif a.lower() == 'remove':
+    country = input('Enter the name of country')
+    countryToRemove=None
+    if country.lower() in random:
+        for key in data:
+            if key.lower() == country.lower():    #if the lowercase of the key in the given dict matches with the input
+                countryToRemove=key
+        del data[countryToRemove] #deleting with the country to be removed key
+    else:
+        print('This country does not exist')
+elif a.lower()=='query':
+    country = input('Enter the name of country')
+    if country.lower() not in random:
+        print(f'{country} does not exist')
+    else:
+        for key in data:
+            if key.lower() == country.lower():  # if the lowercase of the key in the given dict matches with the input
+                print(f'{key}:{data[key]}')
+
+
+
 

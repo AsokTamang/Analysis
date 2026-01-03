@@ -36,6 +36,20 @@ else:
 finally:
     print("Thank you for using the Grade Calculator. Goodbye!")
 
+class Employee:
+    def __init__(self,id,name):
+        self.id=id
+        self.name=name
+    def displaydata(self):
+        return f'{self.id}: {self.name}'
+e=Employee(1,'asok')
+print(e.displaydata())
+del e.id  #here if we are deleting the id
+try:
+ print(e.displaydata())  #then we cannot display the data
+except ValueError as VE: print(VE)
+
+
 
 
 

@@ -12,6 +12,32 @@ with open("C:/Users/ashok/Downloads/stocks.csv",'r') as file , open("C:/Users/as
     outputfile.close()
     file.close()
 
+#GRADE CALCULATOR
+def find_grade(num):
+    if  90<=num<=100:
+        return 'A'
+    elif 80 <= num < 89:
+        return 'B'
+    elif 70 <= num < 79:
+        return 'C'
+    elif 60 <= num < 69:
+        return 'D'
+    else:
+        return 'F'
+
+try:
+    ask = int(input("Enter a value: "))
+    if ask>100 or ask < 0:
+     raise ValueError('Marks must be between 0 and 100')
+except ValueError as VE:  #if the entered value is not a number then we raise a valueError
+     print(VE)
+else:
+    print(find_grade(ask))
+finally:
+    print("Thank you for using the Grade Calculator. Goodbye!")
+
+
+
 
 
 

@@ -77,6 +77,12 @@ second = ' '.join(sentence.split(' ')[-1:-4:-1][::-1])
 print(f'{first} {second}')
 
 
+expenses = [1500,2500,2000,6000]
+for i,expense in enumerate(expenses):
+    print(f'month {i+1}, expense:{expense}')
+
+
+
 
 
 

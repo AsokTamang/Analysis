@@ -43,3 +43,9 @@ print(np.cross(q1,q2))
 print(q1[-1,0:2])  #here we are using slicing method on the very last row of a matrix q1
 print(q1[0,:])  #here we are printing every column of only first row
 print(q1[1:,:])  #here we are printing only  second row but its every column
+
+horizontal = np.hstack((q1,q2))  #this code combines the two matrices horizontally
+print(horizontal)
+
+vertical = np.vstack((q1,q2))    #this code combines the two matrices vertically
+print(vertical)

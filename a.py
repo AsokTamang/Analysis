@@ -102,5 +102,23 @@ for product in products:
 
 
 
+avengers  = ['Iron Man', 'Captain America', 'Black Widow', 'Hulk', 'Thor', 'Hawkeye']
+print(len(avengers))
 
+avengers.append('spiderman')
+avengers.remove('Captain America')
+print(avengers)
+avengers.insert(0,'Captain America')
+print(avengers)
+avengers.remove('Hulk')
+print(avengers)
+avengers.insert(2,'Hulk')
+print(avengers)
 
+scores = [92, 85, 76, 58, 89, 91, 73, 84]
+print(scores[0])  #score of first student
+print(scores[-1]) #score of last student
+print(scores[:3]) #score of first 3 students
+print(scores[2:5]) #score of roll 3 , 4 and 5
+scores.append(83)
+print(scores)

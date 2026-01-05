@@ -11,7 +11,7 @@ class LibraryItem:
         if self.is_borrowed:   #if the book is borrowed then after returning or after this method, the book's borrowed condition will be false
             self.is_borrowed = False
             return f'{self.title} has been returned'
-        return f'{self.title} is not from this library'
+        raise Exception(f'{self.title} is not from this library')
 
 class Book(LibraryItem):
     def __init__(self,title,author):
@@ -21,23 +21,21 @@ class Book(LibraryItem):
         return super().borrow_item()
     def returned(self):
         return super().return_item()
-
-book=Book('The magic of thinking Big','David Schwarz')
-
-
-
 class Journal(LibraryItem):
     def __init__(self,title,issue_number):
         super().__init__(title)
         self.issue_number = issue_number
 nature = Journal('Nature',50)
-
+book=Book('The magic of thinking Big','David Schwarz')
 
 try:
     print((book.taken()))
     book.taken()
-except Exception as e:  #here Exception is whatever is returned from the method inside the try block
+except Exception as e:  #here Exception is whatever is returned from the method inside the try block if the exception is raised inside this try block's method
     print(e)
 
+try:
+    nature.return_item()
+except Exception as e: print(e)
 
 

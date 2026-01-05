@@ -16,6 +16,10 @@ class Player:
         avg_score = self.calculate_avg()
         other_score=other.calculate_avg()
         return avg_score<other_score  #here we are comparing if the current class's average score is lesser than that of other class
+    def __gt__(self,other):
+        avg_score = self.calculate_avg()
+        other_score = other.calculate_avg()
+        return avg_score > other_score  #here we are checking if the average score of this current class is greater than that of the other class or not
 curry = Player('Stephen curry',4,3,1989)
 curry.add_score(44)
 curry.add_score(32)

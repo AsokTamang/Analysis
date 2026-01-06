@@ -111,3 +111,9 @@ result = np.hstack((employee_details,survey_results))  #here we are merging the 
 print(result)
 print(result.dtype)  #this gives us the type of output
 print(np.sort(result[:,-1].astype(int)))  #here first of all we are converting the last column into integer then only we are using np.sort()
+
+print(result[:,:2]) #here this code selects the employee id and the department
+for row in result:
+    print(f'employee id {row[0]} having happiness level of {row[-1]}')
+print(result[:,-1].astype(float))  #converting the type of data using .astype
+

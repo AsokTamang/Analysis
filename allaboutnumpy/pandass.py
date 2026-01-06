@@ -13,9 +13,11 @@ print(df.department.unique())  #printing the unique departments
 print(df['department'].value_counts().rename_axis(None).rename(None).to_dict())
 
 
-
-df_new = df[['employee_id','name','department']]  #filtering the columns
+#filtering the columns
+df_new = df[['employee_id','name','department']]
 print(df_new)
 print(df_new[df_new['employee_id'] == df_new.employee_id.max()].name.rename(None))  #here .rename(None) removes the series name
 
-
+#filtering the rows
+df_latest = df[df['happiness_score']>5]  #here we are getting the dataframe where the happiness data is greater than 5
+print(df_latest)

@@ -117,3 +117,6 @@ for row in result:
     print(f'employee id {row[0]} having happiness level of {row[-1]}')
 print(result[:,-1].astype(float))  #converting the type of data using .astype
 
+average_happiness_score = sum(result[:,-1].astype(int)) // len(result)
+print(average_happiness_score)
+

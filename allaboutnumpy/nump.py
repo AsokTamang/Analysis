@@ -73,7 +73,41 @@ transactions =np.array([
     ['110', 'Rita', '400.75', '2023-08-10']
 ])
 
-index = (np.argmax(transactions[:,2]))  #here we are selecting the transaction column of every rows inorder to get index
+index = (np.argmax(transactions[:,2]))  #here we are selecting the transaction column of every rows inorder to get index having the maximum transaction value
 
 print(transactions[index][1])  #printing the name who made the highest transaction from the given data
 print(transactions[:,2].astype(float).max())  #here we must convert the type to float initially inorder to get the max value from given list of data
+
+print(np.zeros((3,4)))
+
+
+# Employee Details: Employee ID, Department, Number of Years with AtliQ
+employee_details = np.array([
+    [101, 'Sales', 3],
+    [102, 'HR', 5],
+    [103, 'IT', 2],
+    [104, 'Sales', 8],
+    [105, 'IT', 6],
+    [106, 'HR', 4],
+    [107, 'IT', 7],
+    [108, 'Sales', 1],
+    [109, 'HR', 3]
+])
+
+# Survey Results: Employee ID, Happiness Score (1-10)
+survey_results = np.array([
+    [101, 8],
+    [102, 10],
+    [103, 9],
+    [104, 6],
+    [105, 7],
+    [106, 8],
+    [107, 9],
+    [108, 5],
+    [109, 7]
+])
+
+result = np.hstack((employee_details,survey_results))  #here we are merging the employee details and survey results horizontally
+print(result)
+print(result.dtype)  #this gives us the type of output
+print(np.sort(result[:,-1].astype(int)))  #here first of all we are converting the last column into integer then only we are using np.sort()

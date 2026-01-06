@@ -38,5 +38,10 @@ print(most_experienced[['name','contract']])  #again filtering the columns
 
 #print(df.apply(lambda x:x['revenue']-x['budget'],axis=1))
 #pandas df.apply() method is used for applying the function in the dataframe rows or columns
-print(df.set_index('employee_id',inplace=True))    #here we are making the employee_id as the index
+print(df.set_index('name',inplace=True))    #here we are making the employee_id as the index
 print(df.index)
+#pandas loc method is used for retrieving the data based on the index name
+#where as pandas iloc method is used for retrieving the data based on integer index value
+print(df.loc['Ravi'])  #selecting the data of ravi
+print(df.loc[['Mohan','Ravi']])  #here we are printing the entire df of a staff named Mohan  and Ravi using index method
+print(df.iloc[0:3])  #using iloc method inorder to print the first 3 data of the users

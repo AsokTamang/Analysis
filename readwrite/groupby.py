@@ -14,7 +14,7 @@ print(f'{grouped.describe()}\n')
 
 
 
-def grouper(index,df,col):
+def grouper(index,df,col): #this is the custom function which is used for grouping the data based on the quantity
     if 15<=df[col].loc[index]<=20:
         return '15-20'
     elif 10<=df[col].loc[index]<15:  #here we are selecting the column name and locating the row using the passed index

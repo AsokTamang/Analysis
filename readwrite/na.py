@@ -8,5 +8,10 @@ df.fillna({
     'budget': df['budget'].mean(),
     'revenue': df['revenue'].mean()
 }, inplace=True)
-df.to_csv("C:/Users/ashok/OneDrive/Desktop/final_movies.csv", index=False)  # writing towards csv file
+
 print(df)
+df.ffill(limit=1)  #here we are filling the null value using forward fill method by limiting by 1
+print(df.head(4))
+#df.dropna(how='any',inplace=True)  #here if any of the column data in a row is null, that row will be dropped or deleted
+df.interpolate()  #here interpolate means, pd will fill the null value using the intersection value between its next row value and prev row data
+df.to_csv("C:/Users/ashok/OneDrive/Desktop/final_movies.csv", index=False)  # writing towards csv file

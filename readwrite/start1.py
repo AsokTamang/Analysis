@@ -3,7 +3,7 @@ df_agg_bookings = pd.read_csv('C:/Users/ashok/OneDrive/Desktop/fact_aggregated_b
 df_bookings = pd.read_csv("C:/Users/ashok/OneDrive/Desktop/fact_bookings.csv")
 df_date=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_date.csv")
 df_hotel=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_hotels.csv")
-df_room=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_rooms.csv")
+df_rooms=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_rooms.csv")
 maximum = df_agg_bookings.capacity.max()
 
 print(maximum)
@@ -52,3 +52,15 @@ lower_limit = av - 3*std2   #here this one is the lower limit that the revenue_r
 print(df_bookings[df_bookings.revenue_realized>higher_limit])  #here we are checking the datas where the revenue_realized is greater than the higher_limit
 df_bookings=df_bookings[df_bookings.revenue_realized<higher_limit]  #here we are changing the original dataframe inplace by removing all the rows whose  revenue realized value is greater than higher_limit
 print(df_bookings.revenue_realized.shape)
+
+
+#observing the datas
+df_bookings.revenue_realized.describe()
+av,std2=df_bookings.revenue_realized.mean(),df_bookings.revenue_realized.std()
+higher_limit = av + 3*std2
+
+#29359
+print(df_bookings[df_bookings.revenue_realized>higher_limit])  #observing the datas
+print(df_rooms.head(5))
+#df_bookings=df_bookings[df_bookings.revenue_realized<higher_limit]  #here we are changing the original dataframe inplace by removing all the rows whose  revenue realized value is greater than higher_limit
+#df_bookings.revenue_realized.shape

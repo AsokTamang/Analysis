@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 df_bookings = pd.read_csv("C:/Users/ashok/OneDrive/Desktop/fact_bookings.csv")
 df_date=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_date.csv")
 df_hotel=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_hotels.csv")
@@ -16,3 +17,7 @@ df_hotel.head(10)
 df_hotel.city.value_counts()
 df_fact.head(10)
 df_fact.successful_bookings.max()
+print(df_fact.groupby('property_id')['successful_bookings'].value_counts())  #here we are grouping by the property id and counting the total successful
+#bookings)
+df_total=pd.merge(df_bookings,df_fact,on="property_id")
+print(df_total)

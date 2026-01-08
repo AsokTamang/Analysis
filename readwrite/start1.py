@@ -82,3 +82,8 @@ df_agg_bookings.isnull().sum()  #here this calculate the number of null values i
 mean = df_agg_bookings['capacity'].mean()
 df_agg_bookings['capacity'].fillna(mean,inplace=True) #cleaning the data of capacity by replacing the null values with mean value
 df_agg_bookings['capacity'].isnull().sum()
+
+
+# write your code here
+
+print(df_agg_bookings[df_agg_bookings['successful_bookings'] > df_agg_bookings['capacity']])

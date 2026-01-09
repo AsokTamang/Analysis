@@ -119,3 +119,12 @@ print(df['mmm yy'].unique())
 df_june_22=df[df['mmm yy']=="22-Jun"]['city']
 print(df.groupby(df_june_22)['occ_pct'].mean().round(2).plot(kind="pie",explode=[0.2,0,0,0],autopct="%1.2f%%",shadow=True))  #so the occupancy percentage in the month of june for all the cities are as follows:
 plt.show()
+
+
+
+df_bookings.head()
+
+
+df_neww=pd.merge(df_hotels,df_bookings,on="property_id")
+df_neww.head(3)
+df_neww.groupby('city')['revenue_realized'].sum()  #total revenue realized per city

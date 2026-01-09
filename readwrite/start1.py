@@ -2,7 +2,7 @@ import pandas as pd
 df_agg_bookings = pd.read_csv('C:/Users/ashok/OneDrive/Desktop/fact_aggregated_bookings.csv')
 df_bookings = pd.read_csv("C:/Users/ashok/OneDrive/Desktop/fact_bookings.csv")
 df_date=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_date.csv")
-df_hotel=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_hotels.csv")
+df_hotels=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_hotels.csv")
 df_rooms=pd.read_csv("C:/Users/ashok/OneDrive/Desktop/dim_rooms.csv")
 maximum = df_agg_bookings.capacity.max()
 
@@ -97,3 +97,11 @@ df=pd.merge(df_agg_bookings,df_rooms,left_on='room_category',right_on='room_id')
 a=df.groupby('room_class')['occ_pct']
 for k,v in a:
     print(k,v)
+
+#per city
+df_new = pd.merge(df,df_hotels,on="property_id")
+df_new.head(5)
+b=df_new.groupby('city')['occ_pct']
+for k,v in b:
+    print(k)
+    print(v)
